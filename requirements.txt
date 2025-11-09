@@ -1,7 +1,8 @@
 flask==3.0.3
 pandas==2.2.3
-numpy>=1.26,<2.0
+numpy==1.26.4
 catboost==1.2.3
-scikit-learn==1.5.2
-streamlit==1.38.0
-requests==2.32.3
+streamlit==1.39.0
+requests
+
+
