@@ -1,0 +1,1 @@
+{"lng": {"min": 0.0, "max": 1.0}, "lat": {"min": 0.0, "max": 1.0}, "pickup_distance_km": {"min": 0.0, "max": 1.0}, "accept_hour": {"min": 0.0, "max": 1.0}, "pickup_hour": {"min": 0.0, "max": 1.0}, "accept_day": {"min": 0.0, "max": 1.0}, "pickup_day": {"min": 0.0, "max": 1.0}, "accept_month": {"min": 0.0, "max": 1.0}, "pickup_month": {"min": 0.0, "max": 1.0}}

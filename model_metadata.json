@@ -1,0 +1,46 @@
+{
+    "pickup_model": {
+        "file": "catboost_pickup_eta_model.cbm",
+        "categorical_features": [
+            "city",
+            "accept_date",
+            "pickup_date",
+            "hour_bucket",
+            "day_type"
+        ],
+        "numeric_features": [
+            "lng",
+            "lat",
+            "aoi_type",
+            "pickup_distance_km",
+            "accept_hour",
+            "pickup_hour",
+            "accept_day",
+            "pickup_day",
+            "accept_month",
+            "pickup_month"
+        ]
+    },
+    "delivery_model": {
+        "file": "catboost_delivery_eta_model.cbm",
+        "categorical_features": [
+            "city",
+            "accept_date",
+            "delivery_date",
+            "day_type",
+            "hour_bucket"
+        ],
+        "numeric_features": [
+            "lng",
+            "lat",
+            "aoi_type",
+            "delivery_distance_km",
+            "accept_hour",
+            "delivery_hour",
+            "accept_day",
+            "delivery_day",
+            "accept_month",
+            "delivery_month"
+        ]
+    }
+}
