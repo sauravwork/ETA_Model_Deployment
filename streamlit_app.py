@@ -2,12 +2,12 @@ import streamlit as st
 import requests
 
 # ---------------- CONFIG ----------------
-API_URL = "https://eta-predictor.onrender.com/predict"
+API_URL = "https://eta-model-deployment-streamlit.onrender.com/predict"  # ✅ Your Flask API endpoint
 
 st.set_page_config(page_title="ETA Predictor", page_icon="🚚", layout="centered")
 
 st.title("🚚 ETA Prediction App")
-st.write("Predict delivery or pickup ETA using the trained CatBoost model deployed on Flask + Docker.")
+st.write("Enter details to get the estimated time of arrival (ETA) using your deployed CatBoost model.")
 
 # ---------------- INPUT FORM ----------------
 mode = st.radio("Select Mode", ["pickup", "delivery"])
@@ -36,7 +36,7 @@ day_type = st.selectbox("Day Type", ["Weekday", "Weekend"])
 
 # ---------------- PREDICTION ----------------
 if st.button("🔮 Predict ETA"):
-    st.info("Sending data to Flask API for prediction...")
+    st.info("⏳ Sending data to API... Please wait...")
 
     payload = {
         "mode": mode,
@@ -64,12 +64,12 @@ if st.button("🔮 Predict ETA"):
         if response.status_code == 200:
             data = response.json()
             st.success(f"✅ ETA Predicted: {data['eta_minutes']} minutes")
-            st.write(f"Normalized ETA: `{data['eta_normalized']}`")
-            st.write(f"Processing Time: `{data['processing_time_sec']} sec`")
+            st.metric("Normalized ETA", f"{data['eta_normalized']}")
+            st.metric("Processing Time", f"{data['processing_time_sec']} sec")
         else:
             st.error(f"API Error: {response.text}")
     except Exception as e:
-        st.error(f"Failed to connect to API: {e}")
+        st.error(f"❌ Failed to connect to API: {e}")
 
 st.markdown("---")
-st.caption("Backend: Flask + Docker | Frontend: Streamlit | Model: CatBoost")
+st.caption("Backend: Flask + Docker (Render) | Frontend: Streamlit | Model: CatBoost ETA Predictor")
