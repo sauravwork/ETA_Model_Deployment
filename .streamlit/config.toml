@@ -1,0 +1,10 @@
+[general]
+email = "gaikwad.sauravwork@gmail.com"
+
+[server]
+headless = true
+port = 8501
+enableCORS = false
+
+[python]
+version = "3.10"
